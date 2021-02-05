@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = ".Net Core DI Lifespan Example";
+}
+@model DILifeSpans.MVC.ViewModels.HomeViewModel
+ 
+<h1>.Net Core DI Lifespans Example</h1>
+
+
+<p>The below IDs were generated at the same time yet have different lifespans.</p>
+
+<section>
+    <h2>Transient Services</h2>
+    <p><em>A new service is generated with each request. (each value is always different)</em></p>
+    <ul>
+        <li>Transient ID One: @Model.TransientOne</li>
+        <li>Transient ID Two: @Model.TransientTwo</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Scoped Services</h2>
+    <p><em>A new service is created once but persists values for both service. (until a page refresh happens)</em></p>
+    <ul>
+        <li>Transient ID One: @Model.ScopedOne</li>
+        <li>Transient ID Two: @Model.ScopedTwo</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Singleton Services</h2>
+    <p><em>A new service is created once and lasts for as long as the application is running. (notice it does not change through refresh)</em></p>
+    <ul>
+        <li>Transient ID One: @Model.SingletonOne</li>
+        <li>Transient ID Two: @Model.SingletonTwo</li>
+    </ul>
+</section>
